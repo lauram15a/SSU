@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -12,7 +13,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject spawnPoint1, spawnPoint2;
 
     private int lives = 200;
-    
+    [SerializeField] private TextMeshProUGUI textLives;
+
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +33,7 @@ public class PlayerController : MonoBehaviour
 
     private void Move()
     {
+        UpdateTextLives();
         Movement();
         DelimitedMovement();
         isAlive();
@@ -73,6 +76,11 @@ public class PlayerController : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    private void UpdateTextLives()
+    {
+        textLives.text = "Lives: " + lives;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
