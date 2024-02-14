@@ -58,4 +58,13 @@ public class EnemyController : MonoBehaviour
             yield return new WaitForSeconds(0.5f);
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("MissilePlayer"))
+        {
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
+        }
+    }
 }

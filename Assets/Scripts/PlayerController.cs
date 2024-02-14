@@ -7,8 +7,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private float ratioShoot;
     private float timer = 0.5f;
+
     [SerializeField] private GameObject missilePrefab;
     [SerializeField] private GameObject spawnPoint1, spawnPoint2;
+
+    private int lives = 200;
     
 
     // Start is called before the first frame update
@@ -30,6 +33,7 @@ public class PlayerController : MonoBehaviour
     {
         Movement();
         DelimitedMovement();
+        isAlive();
     }
 
     private void Movement()
@@ -60,6 +64,28 @@ public class PlayerController : MonoBehaviour
             Instantiate(missilePrefab, spawnPoint2.transform.position, Quaternion.identity);
             
             timer = 0;
+        }
+    }
+
+    private void isAlive()
+    {
+        if (lives <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("MissileEnemy"))
+        {
+            lives -= 20;
+            Destroy(collision.gameObject);
+        }
+        else if (collision.gameObject.CompareTag("Enemy"))
+        {
+            lives -= 50;
+            Destroy(collision.gameObject);
         }
     }
 }

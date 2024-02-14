@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Background
   - Enemy
+  - MissileEnemy
+  - MissilePlayer
   - Missile
   layers:
   - Default

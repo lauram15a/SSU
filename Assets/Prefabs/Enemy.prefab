@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2932977325016673601}
   - component: {fileID: 4414721660856720826}
   - component: {fileID: 807638261972729030}
+  - component: {fileID: 3605851318948043033}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -80,6 +81,69 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!60 &3605851318948043033
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 138954182483595055}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.5682664, y: 0.39845538}
+      - {x: 0.38544267, y: 0.6461153}
+      - {x: 0.20538881, y: 0.6618925}
+      - {x: 0.14216867, y: 0.51359296}
+      - {x: -0.13608694, y: 0.4216305}
+      - {x: -0.58377045, y: 0.19819242}
+      - {x: -1.1143608, y: 0.13210393}
+      - {x: -1.128083, y: -0.12944591}
+      - {x: -0.5537634, y: -0.26466924}
+      - {x: -0.15388846, y: -0.41436478}
+      - {x: 0.17221904, y: -0.53986335}
+      - {x: 0.18609577, y: -0.6479019}
+      - {x: 0.38419092, y: -0.6604208}
+      - {x: 0.5467102, y: -0.43616495}
+      - {x: 0.8647603, y: -0.5089166}
+      - {x: 1.1552916, y: -0.44550636}
+      - {x: 1.1321158, y: 0.4354319}
+      - {x: 0.89662176, y: 0.48593014}
+  m_UseDelaunayMesh: 0
 --- !u!1 &2861198212505510127
 GameObject:
   m_ObjectHideFlags: 0
@@ -243,7 +307,8 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 4
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 60747222778789230, guid: fedd70b28e1d0bc44b3cb74a02d982d3, type: 3}
     m_RemovedGameObjects:
     - {fileID: 1618772364417044, guid: fedd70b28e1d0bc44b3cb74a02d982d3, type: 3}
     - {fileID: 1055353381888170, guid: fedd70b28e1d0bc44b3cb74a02d982d3, type: 3}
