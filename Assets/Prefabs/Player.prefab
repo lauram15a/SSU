@@ -107,6 +107,7 @@ GameObject:
   - component: {fileID: 2159422440694520430}
   - component: {fileID: 8915775992411544897}
   - component: {fileID: 6848603387145984027}
+  - component: {fileID: 9049661531659568530}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -227,6 +228,61 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!60 &9049661531659568530
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7129400453242431467}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.87727547, y: 0.05604908}
+      - {x: 0.15066576, y: 0.31828368}
+      - {x: 0.04389906, y: 0.5006467}
+      - {x: -0.53161, y: 0.7253205}
+      - {x: -0.8358212, y: 0.7041097}
+      - {x: -0.7798442, y: -0.73219347}
+      - {x: -0.49193907, y: -0.7128477}
+      - {x: -0.0005226135, y: -0.49862993}
+      - {x: 0.12684357, y: -0.32063845}
+      - {x: 0.88520765, y: -0.058638632}
+  m_UseDelaunayMesh: 0
 --- !u!1001 &4083418325374046858
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -327,6 +383,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 60459162822621898, guid: ceb2e69d6fcbbcf4eb36a02462f60ce6, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 212056396206988026, guid: ceb2e69d6fcbbcf4eb36a02462f60ce6, type: 3}
       propertyPath: m_SortingOrder
       value: 4
@@ -372,7 +432,7 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: -4143134863215897602, guid: ceb2e69d6fcbbcf4eb36a02462f60ce6, type: 3}
+    - {fileID: 60459162822621898, guid: ceb2e69d6fcbbcf4eb36a02462f60ce6, type: 3}
     m_RemovedGameObjects:
     - {fileID: 1561273461926526, guid: ceb2e69d6fcbbcf4eb36a02462f60ce6, type: 3}
     - {fileID: 1820593737998128, guid: ceb2e69d6fcbbcf4eb36a02462f60ce6, type: 3}
