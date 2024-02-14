@@ -5,6 +5,7 @@ using UnityEngine;
 public class MissileController : MonoBehaviour
 {
     [SerializeField] private float speed;
+    [SerializeField] private float xPositionDestroy;
 
     private void Awake()
     {
@@ -21,10 +22,20 @@ public class MissileController : MonoBehaviour
     void Update()
     {
         Move();
+        Destroy();
     }
 
     private void Move()
     {
         transform.Translate(new Vector3(0, 1, 0) * speed * Time.deltaTime);
+    }
+
+    private void Destroy()
+    {
+        if (transform.position.x >= xPositionDestroy)
+        {
+            Destroy(gameObject);
+        }
+        
     }
 }

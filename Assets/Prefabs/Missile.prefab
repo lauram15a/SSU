@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 15
+  xPositionDestroy: 11
 --- !u!212 &212389720134373278
 SpriteRenderer:
   m_ObjectHideFlags: 0
