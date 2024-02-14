@@ -284,6 +284,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2159422440694520430, guid: a2609eea5fea76a42a2e1a0e5f7b5a76, type: 3}
+      propertyPath: missilePrefab
+      value: 
+      objectReference: {fileID: 8099329220597748208, guid: 4ea45d76ffc885048b6a9f0c795c424d, type: 3}
     - target: {fileID: 4084302818721527026, guid: a2609eea5fea76a42a2e1a0e5f7b5a76, type: 3}
       propertyPath: m_Name
       value: PlayerSpaceShip
