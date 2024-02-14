@@ -12,7 +12,7 @@ GameObject:
   m_Layer: 0
   m_Name: SpawnPoint
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 4554512981872696484}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.184, y: 0.448, z: 0}
+  m_LocalPosition: {x: 0.034999833, y: 0.736, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -76,7 +76,7 @@ GameObject:
   m_Layer: 0
   m_Name: SpawnPoint (1)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -89,7 +89,7 @@ Transform:
   m_GameObject: {fileID: 6597514625084477220}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.184, y: -0.454, z: 0}
+  m_LocalPosition: {x: 0.035, y: -0.166, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   ratioShoot: 0.5
-  missilePrefab: {fileID: 1490768108874216, guid: 53c54a58f50e3f946a07359f340491f3, type: 3}
+  missilePrefab: {fileID: 8099329220597748208, guid: 4ea45d76ffc885048b6a9f0c795c424d, type: 3}
   spawnPoint1: {fileID: 4554512981872696484}
   spawnPoint2: {fileID: 6597514625084477220}
 --- !u!212 &8915775992411544897
@@ -245,7 +245,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1526754174330488, guid: ceb2e69d6fcbbcf4eb36a02462f60ce6, type: 3}
       propertyPath: m_Name
-      value: ExcaliburTopViewBlue
+      value: PlayerSpaceShip
       objectReference: {fileID: 0}
     - target: {fileID: 1561273461926526, guid: ceb2e69d6fcbbcf4eb36a02462f60ce6, type: 3}
       propertyPath: m_Name

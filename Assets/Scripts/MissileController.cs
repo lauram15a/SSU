@@ -33,10 +33,19 @@ public class MissileController : MonoBehaviour
 
     private void Destroy()
     {
-        if (transform.position.x >= xPositionDestroy)
+        if (xPositionDestroy > 0)
         {
-            Destroy(gameObject);
+            if (transform.position.x >= xPositionDestroy)
+            {
+                Destroy(gameObject);
+            }
         }
-        
+        else
+        {
+            if (transform.position.x <= xPositionDestroy)
+            {
+                Destroy(gameObject);
+            }
+        }    
     }
 }

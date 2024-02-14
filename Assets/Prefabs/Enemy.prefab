@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 807638261972729030}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -49,6 +49,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   xPositionDestroy: -12
+  yMaxPosition: 4.23
+  yMinPosition: -4.23
+  missilePrefab: {fileID: 5027035624497413689, guid: 6106d57d5d0b8db4fa5b0585a8961bc9, type: 3}
+  spawnPoint: {fileID: 2861198212505510127}
 --- !u!50 &807638261972729030
 Rigidbody2D:
   serializedVersion: 4
@@ -88,7 +92,7 @@ GameObject:
   m_Layer: 0
   m_Name: SpawnPoint
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -101,7 +105,7 @@ Transform:
   m_GameObject: {fileID: 2861198212505510127}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.072, y: 0.42, z: 0}
+  m_LocalPosition: {x: 5.072, y: 0.85, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
