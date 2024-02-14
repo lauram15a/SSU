@@ -6,10 +6,11 @@ public class MissileController : MonoBehaviour
 {
     [SerializeField] private float speed;
     [SerializeField] private float xPositionDestroy;
+    [SerializeField] private int xDirection;
 
     private void Awake()
     {
-        transform.eulerAngles = new Vector3(0, 0, -90);
+        //transform.eulerAngles = new Vector3(0, 0, -90);
     }
 
     // Start is called before the first frame update
@@ -27,15 +28,24 @@ public class MissileController : MonoBehaviour
 
     private void Move()
     {
-        transform.Translate(new Vector3(0, 1, 0) * speed * Time.deltaTime);
+        transform.Translate(new Vector3(xDirection, 0, 0) * speed * Time.deltaTime);
     }
 
     private void Destroy()
     {
-        if (transform.position.x >= xPositionDestroy)
+        if (xPositionDestroy > 0)
         {
-            Destroy(gameObject);
+            if (transform.position.x >= xPositionDestroy)
+            {
+                Destroy(gameObject);
+            }
         }
-        
+        else
+        {
+            if (transform.position.x <= xPositionDestroy)
+            {
+                Destroy(gameObject);
+            }
+        }    
     }
 }
