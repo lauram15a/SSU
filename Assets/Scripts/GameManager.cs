@@ -140,9 +140,9 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
-    public void ClickButtonInstructions()
+    public void ClickButtonStart()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(1);
     }
 
     public void ClickButtonExit()
