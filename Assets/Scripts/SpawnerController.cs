@@ -17,12 +17,6 @@ public class SpawnerController : MonoBehaviour
         StartCoroutine(EnemiesSpawner());
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     IEnumerator EnemiesSpawner()
     {
         for (int i = 0; i < numLevels; i++)
@@ -31,7 +25,9 @@ public class SpawnerController : MonoBehaviour
 
             textNewLevel.gameObject.SetActive(true);
             textNewLevel.text = "Level  " + (i + 1);
+
             yield return new WaitForSeconds(4);
+
             textNewLevel.gameObject.SetActive(false);
 
             if (i == 0)
@@ -48,13 +44,13 @@ public class SpawnerController : MonoBehaviour
                     }
                     else
                     {
-                        yield return new WaitForSeconds(2.5f);
+                        yield return new WaitForSeconds(1);
                     }
                 }
             }
             else if (i == 1)
             {
-                numEnemies = 5;
+                numEnemies = 10;
 
                 for (int j = 0; j < numEnemies; j++)
                 {
@@ -72,7 +68,7 @@ public class SpawnerController : MonoBehaviour
             }
             else if (i == 2)
             {
-                numEnemies = 10;
+                numEnemies = 15;
 
                 for (int j = 0; j < numEnemies; j++)
                 {
@@ -90,24 +86,6 @@ public class SpawnerController : MonoBehaviour
             }
             else if (i == 3)
             {
-                numEnemies = 15;
-
-                for (int j = 0; j < numEnemies; j++)
-                {
-                    Instantiate(enemyPrefab, transform.position, Quaternion.identity);
-
-                    if (j == (numEnemies - 1))
-                    {
-                        yield return new WaitForSeconds(5);
-                    }
-                    else
-                    {
-                        yield return new WaitForSeconds(Random.Range(2, 4));
-                    }
-                }
-            }
-            else if (i == 4)
-            {
                 numEnemies = 20;
 
                 for (int j = 0; j < numEnemies; j++)
@@ -120,10 +98,30 @@ public class SpawnerController : MonoBehaviour
                     }
                     else
                     {
-                        yield return new WaitForSeconds(Random.Range(1, 4));
+                        yield return new WaitForSeconds(Random.Range(0.5f, 2));
+                    }
+                }
+            }
+            else if (i == 4)
+            {
+                numEnemies = 25;
+
+                for (int j = 0; j < numEnemies; j++)
+                {
+                    Instantiate(enemyPrefab, transform.position, Quaternion.identity);
+
+                    if (j == (numEnemies - 1))
+                    {
+                        yield return new WaitForSeconds(5);
+                    }
+                    else
+                    {
+                        yield return new WaitForSeconds(Random.Range(0.5f, 1.5f));
                     }
                 }
             }
         }
+
+        GameManager.Instance.GameOver(true);
     }
 }

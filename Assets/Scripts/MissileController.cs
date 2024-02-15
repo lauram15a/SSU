@@ -8,16 +8,6 @@ public class MissileController : MonoBehaviour
     [SerializeField] private float xPositionDestroy;
     [SerializeField] private int xDirection;
 
-    private void Awake()
-    {
-        //transform.eulerAngles = new Vector3(0, 0, -90);
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()

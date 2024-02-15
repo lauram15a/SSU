@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,13 +9,16 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject screenWinner;
     [SerializeField] private GameObject screenLoser;
     [SerializeField] private GameObject infoUI;
+    [SerializeField] private TextMeshProUGUI textPoints;
 
     private AudioSource sound;
     [SerializeField] private AudioClip soundWinner;
     [SerializeField] private AudioClip soundLoser;
 
-    public bool isGameOver;
-    public bool isWinner;
+    private int points = 0;
+
+    private bool isGameOver;
+    private bool isWinner;
 
     int currentIndexScene;
 
@@ -33,6 +37,11 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
         sound = GetComponent<AudioSource>();
+    }
+
+    private void Update()
+    {
+        textPoints.text = "Points: " + points.ToString();
     }
 
 
@@ -106,6 +115,16 @@ public class GameManager : MonoBehaviour
 
     #region Getters and setters
     public int GetCurrentIndexScene() { return currentIndexScene; }
+
+    public void AddPoint()
+    {
+        points = +1;
+    }
+
+    public bool IsGameOver()
+    {
+        return isGameOver;
+    }
 
     #endregion
 }
