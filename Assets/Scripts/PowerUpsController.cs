@@ -4,22 +4,18 @@ using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
 
-public class EnemyController : MonoBehaviour
+public class PowerUpsController : MonoBehaviour
 {
-    [SerializeField] private float speed;
-    [SerializeField] private float xPositionDestroy;
-    [SerializeField] private float yMaxPosition;
-    [SerializeField] private float yMinPosition;
-    [SerializeField] private GameObject missilePrefab;
-    [SerializeField] private GameObject spawnPoint;
-    private bool isAlive = true;
+    [SerializeField] protected float speed;
+    [SerializeField] private float xPositionDestroy = -13;
+    [SerializeField] private float yMaxPosition = 3.6f;
+    [SerializeField] private float yMinPosition = -4.2f;
     
 
     // Start is called before the first frame update
     void Start()
     {
         transform.position = new Vector3(transform.position.x, PositionY(), transform.position.z);
-        StartCoroutine(MissileSpawner());
     }
 
     // Update is called once per frame
@@ -53,27 +49,7 @@ public class EnemyController : MonoBehaviour
     {
         if (transform.position.x <= xPositionDestroy)
         {
-            isAlive = false;
             Destroy(gameObject);
         }
-    }
-
-    IEnumerator MissileSpawner()
-    {
-        while (isAlive)
-        {
-            Instantiate(missilePrefab, spawnPoint.transform.position, Quaternion.identity);
-            yield return new WaitForSeconds(0.5f);
-        }
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("MissilePlayer"))
-        {
-            GameManager.Instance.AddPoint(1);
-            Destroy(collision.gameObject);
-            Destroy(gameObject);
-        }
-    }
+    }  
 }

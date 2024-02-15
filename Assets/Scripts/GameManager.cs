@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject infoUI;
     [SerializeField] private TextMeshProUGUI textPoints;
 
+    [SerializeField] private PlayerController player;
+
     private AudioSource sound;
     [SerializeField] private AudioClip soundWinner;
     [SerializeField] private AudioClip soundLoser;
@@ -44,7 +46,6 @@ public class GameManager : MonoBehaviour
         textPoints.text = "Points: " + points.ToString();
     }
 
-
     public void GameOver(bool result)
     {
         isWinner = result;
@@ -64,6 +65,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    #region Show screens
     IEnumerator WaitScreenGameOver()
     {
         yield return new WaitForSeconds(0.3f);
@@ -75,6 +77,8 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(0.3f);
         screenWinner.SetActive(true);
     }
+
+    #endregion
 
     private void Sound()
     {
@@ -88,7 +92,43 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    
+    #region Points
+    public void AddPoint(int newPoints)
+    {
+        points = points + newPoints;
+    }
+
+    public void SubPoint(int newPoints)
+    {
+        points = points - newPoints;
+    }
+
+    #endregion
+
+
+    #region Player
+    public void RefillPlayerLives()
+    {
+        player.SetLives(player.GetMaxLives());
+    }
+
+    public void AddPlayerLives()
+    {
+        player.SetLives(player.GetLives() + (player.GetMaxLives() / 3));
+    }
+
+    public void SubPlayerLives()
+    {
+        player.SetLives(player.GetLives() - (player.GetMaxLives() / 3));
+    }
+
+    public void KillPlayer()
+    {
+        player.SetLives(0);
+    }
+
+    #endregion
+
     #region Buttons actions
     public void ClickButtonRestart()
     {
@@ -115,11 +155,6 @@ public class GameManager : MonoBehaviour
 
     #region Getters and setters
     public int GetCurrentIndexScene() { return currentIndexScene; }
-
-    public void AddPoint()
-    {
-        points = +1;
-    }
 
     public bool IsGameOver()
     {
