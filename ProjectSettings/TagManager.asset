@@ -9,6 +9,7 @@ TagManager:
   - MissileEnemy
   - MissilePlayer
   - Missile
+  - PowerUp
   layers:
   - Default
   - TransparentFX

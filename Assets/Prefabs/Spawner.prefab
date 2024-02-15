@@ -45,4 +45,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 138954182483595055, guid: a81b1249431884d47b1e86a3f335438b, type: 3}
+  pwu_AddPointsPrefab: {fileID: 1411725965252990712, guid: 2b7e5608614826d4e922c0b223bb2737, type: 3}
+  pwu_SubPointsPrefab: {fileID: 2928397808184068510, guid: f1cbef392faaa104a90d0c2302bfb273, type: 3}
+  pwu_KillerPrefab: {fileID: 1145602332629345251, guid: e0456e3bf809cb242b7573b45ecb3e33, type: 3}
+  pwu_RefillPrefab: {fileID: 5153118311482205151, guid: 73cc71da7dcd9934cba6ce6dd69ba712, type: 3}
+  pwu_LivesPrefab: {fileID: 9222753188957250501, guid: 2394981283d09ec4bb4f7f769387004f, type: 3}
   numEnemies: 10
+  numPowerUps: 0
+  textLevel: {fileID: 0}
+  textNewLevel: {fileID: 0}

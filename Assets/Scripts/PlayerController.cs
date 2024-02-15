@@ -12,14 +12,15 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject missilePrefab;
     [SerializeField] private GameObject spawnPoint1, spawnPoint2;
 
-    private int lives = 400;
+    private int lives;
+    [SerializeField] private int maxLives = 300;
     [SerializeField] private TextMeshProUGUI textLives;
 
 
     // Start is called before the first frame update
     void Start()
     {
-     
+        lives = maxLives;
     }
 
     // Update is called once per frame
@@ -84,16 +85,34 @@ public class PlayerController : MonoBehaviour
         textLives.text = "Lives: " + lives;
     }
 
+    #region Getters y setters
+    public int GetLives()
+    {
+        return lives;
+    }
+
+    public void SetLives(int newLives)
+    {
+        lives = newLives;
+    }
+
+    public int GetMaxLives()
+    {
+        return maxLives;
+    }
+
+    #endregion
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("MissileEnemy"))
         {
-            lives -= 20;
+            lives -= 10;
             Destroy(collision.gameObject);
         }
         else if (collision.gameObject.CompareTag("Enemy"))
         {
-            lives -= 50;
+            lives -= 20;
             Destroy(collision.gameObject);
         }
     }
