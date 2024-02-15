@@ -32,7 +32,7 @@ public class EnemyController : MonoBehaviour
 
     private void isGameOver()
     {
-        if (GameManager.Instance.isGameOver)
+        if (GameManager.Instance.IsGameOver())
         {
             Destroy(gameObject);
         }
@@ -71,6 +71,7 @@ public class EnemyController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("MissilePlayer"))
         {
+            GameManager.Instance.AddPoint();
             Destroy(collision.gameObject);
             Destroy(gameObject);
         }

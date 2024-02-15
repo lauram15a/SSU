@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject missilePrefab;
     [SerializeField] private GameObject spawnPoint1, spawnPoint2;
 
-    private int lives = 200;
+    private int lives = 400;
     [SerializeField] private TextMeshProUGUI textLives;
 
 
@@ -25,18 +25,18 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        UpdateTextLives();
         Move();
         Shoot();
+        isAlive();
     }
 
     #region Move
 
     private void Move()
     {
-        UpdateTextLives();
         Movement();
         DelimitedMovement();
-        isAlive();
     }
 
     private void Movement()
