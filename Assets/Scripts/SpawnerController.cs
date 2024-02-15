@@ -31,47 +31,97 @@ public class SpawnerController : MonoBehaviour
 
             textNewLevel.gameObject.SetActive(true);
             textNewLevel.text = "Level  " + (i + 1);
-            yield return new WaitForSeconds(5);
+            yield return new WaitForSeconds(4);
             textNewLevel.gameObject.SetActive(false);
 
             if (i == 0)
             {
+                numEnemies = 5;
+
                 for (int j = 0; j < numEnemies; j++)
                 {
                     Instantiate(enemyPrefab, transform.position, Quaternion.identity);
-                    yield return new WaitForSeconds(Random.Range(1, 4));
+                    
+                    if (j == (numEnemies - 1))
+                    {
+                        yield return new WaitForSeconds(5);
+                    }
+                    else
+                    {
+                        yield return new WaitForSeconds(2.5f);
+                    }
                 }
             }
             else if (i == 1)
             {
+                numEnemies = 5;
+
                 for (int j = 0; j < numEnemies; j++)
                 {
                     Instantiate(enemyPrefab, transform.position, Quaternion.identity);
-                    yield return new WaitForSeconds(Random.Range(1, 4));
+
+                    if (j == (numEnemies - 1))
+                    {
+                        yield return new WaitForSeconds(5);
+                    }
+                    else
+                    {
+                        yield return new WaitForSeconds(Random.Range(1, 4));
+                    }
                 }
             }
             else if (i == 2)
             {
+                numEnemies = 10;
+
                 for (int j = 0; j < numEnemies; j++)
                 {
                     Instantiate(enemyPrefab, transform.position, Quaternion.identity);
-                    yield return new WaitForSeconds(Random.Range(1, 4));
+
+                    if (j == (numEnemies - 1))
+                    {
+                        yield return new WaitForSeconds(5);
+                    }
+                    else
+                    {
+                        yield return new WaitForSeconds(Random.Range(1, 2));
+                    }
                 }
             }
             else if (i == 3)
             {
+                numEnemies = 15;
+
                 for (int j = 0; j < numEnemies; j++)
                 {
                     Instantiate(enemyPrefab, transform.position, Quaternion.identity);
-                    yield return new WaitForSeconds(Random.Range(1, 4));
+
+                    if (j == (numEnemies - 1))
+                    {
+                        yield return new WaitForSeconds(5);
+                    }
+                    else
+                    {
+                        yield return new WaitForSeconds(Random.Range(2, 4));
+                    }
                 }
             }
             else if (i == 4)
             {
+                numEnemies = 20;
+
                 for (int j = 0; j < numEnemies; j++)
                 {
                     Instantiate(enemyPrefab, transform.position, Quaternion.identity);
-                    yield return new WaitForSeconds(Random.Range(1, 4));
+
+                    if (j == (numEnemies - 1))
+                    {
+                        yield return new WaitForSeconds(5);
+                    }
+                    else
+                    {
+                        yield return new WaitForSeconds(Random.Range(1, 4));
+                    }
                 }
             }
         }
