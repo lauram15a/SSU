@@ -118,7 +118,7 @@ public class GameManager : MonoBehaviour
 
     public void AddPoint()
     {
-        points = +1;
+        points = points + 1;
     }
 
     public bool IsGameOver()
