@@ -74,6 +74,7 @@ public class PlayerController : MonoBehaviour
     {
         if (lives <= 0)
         {
+            GameManager.Instance.GameOver(false);
             Destroy(gameObject);
         }
     }

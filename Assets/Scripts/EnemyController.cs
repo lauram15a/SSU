@@ -18,15 +18,24 @@ public class EnemyController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(MissileSpawner());
         transform.position = new Vector3(transform.position.x, PositionY(), transform.position.z);
+        StartCoroutine(MissileSpawner());
     }
 
     // Update is called once per frame
     void Update()
     {
+        isGameOver();
         Move();
         Destroy();
+    }
+
+    private void isGameOver()
+    {
+        if (GameManager.Instance.isGameOver)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private float PositionY()
@@ -47,7 +56,6 @@ public class EnemyController : MonoBehaviour
             isAlive = false;
             Destroy(gameObject);
         }
-
     }
 
     IEnumerator MissileSpawner()
